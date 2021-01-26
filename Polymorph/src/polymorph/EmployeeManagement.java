@@ -18,7 +18,7 @@ import polymorph.Employees.Employee;
 public class EmployeeManagement 
 {
     //Alla anställda i företagets 
-    public ArrayList<Employee> m_employeeList;
+    ArrayList<Employee> m_employeeList = new ArrayList();
 
     public void AddEmployee(Employee employee)
     {
@@ -93,7 +93,7 @@ public class EmployeeManagement
         return null;
     }
     
-    public ArrayList<Employee> EmployeeGetAllEmployees(){
+    public ArrayList<Employee> GetAllEmployees(){
         return m_employeeList;
     }
     public final int GenerateID(){
@@ -112,5 +112,16 @@ public class EmployeeManagement
         }while(tempId == -1);
         
         return tempId;
+    }
+    public void PrintAllEmployees(){
+        for (int i = 0; i < m_employeeList.size(); i++) {
+            System.out.println("Name: "+m_employeeList.get(i).getName());
+            System.out.println("Age: "+m_employeeList.get(i).getAge());
+            System.out.println("Position: "+m_employeeList.get(i).getPosition());
+            System.out.println("Salary: "+m_employeeList.get(i).getSalary());
+            System.out.println("Sex: "+m_employeeList.get(i).getSex());
+         
+        }
+    
     }
 }

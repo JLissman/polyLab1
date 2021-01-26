@@ -25,6 +25,10 @@ public class Employee {
     public void getBonus(){
         System.out.println("Everybody got a bonus");
     }
+    
+    public String getPosition(){
+        return "Everyody got a position";
+    }
     public int getID(){
         return this.ID;
     }
@@ -32,6 +36,10 @@ public class Employee {
         return Name;
     }
 
+    public int getSalary() {
+        return Salary;
+    }
+    
     public void setID(int employeeId) {
         this.ID = employeeId;
     }
@@ -62,7 +70,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Anstalld{" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + '}';
+        return "Employee{" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + ", Position =" + '}';
     }
     
 

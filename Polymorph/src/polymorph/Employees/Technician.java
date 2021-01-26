@@ -9,10 +9,10 @@ package polymorph.Employees;
  *
  * @author Jonathan
  */
-public class Tekniker extends Employee {
+public class Technician extends Employee {
     int fkup;
     
-    public Tekniker(String Name, int Age, String Sex, int Pay) {
+    public Technician(String Name, int Age, String Sex, int Pay) {
         super(Name, Age, Sex, Pay);
     }
     

@@ -5,93 +5,91 @@
  */
 package polymorph;
 
-
 import polymorph.Employees.*;
 import polymorph.EmployeeManagement.*;
+
 /**
  *
  * @author Jonathan
  */
 public class Statistics {
-    
-    
-    
-    public String getLowestSalary(){
+
+    public static String getLowestSalary(EmployeeManagement business) {
         int min = 140000;
-        String name;
-        
-        for (Employee e : EmpolyeeManagement.m_employeeList) {
-            if (e.getSalary() < min){
+        String name = "", pos = "";
+
+        for (Employee e : business.GetAllEmployees()) {
+            if (e.getSalary() < min) {
                 min = e.getSalary();
-            
+                name = e.getName();
+                pos = e.getPosition();
+
             }
-            
+
         }
-        
-            return "The lowest salary is "+min+" and is held by "+name+" that works at position "+pos;
-         
-    
+
+        return "The lowest salary is " + min + " and is held by " + name + " that works at position " + pos;
+
     }
 
-    public String getHighestSalary(){
-    int max = Employees.get(0).getSalary();
-    String name = Employees.get(0).getName();
-    String pos = Employees.get(0).getPo
-        for (Anstalld e : Employees) {
-            if (e.getSalary() > max){
+    public static String getHighestSalary(EmployeeManagement business) {
+        int max = 0;
+        String name = "", pos = "";
+        for (Employee e : business.GetAllEmployees()) {
+            if (e.getSalary() > max) {
                 max = e.getSalary();
                 name = e.getName();
+                pos = e.getPosition();
             }
-            
-        }
-        
-            return "The highest salary is "+max+" and is held by "+name+" that works at position "+pos;
-        
-        
-    }
-    
 
-    public static String getOverallAverageSalary(){
+        }
+
+        return "The highest salary is " + max + " and is held by " + name + " that works at position " + pos;
+
+    }
+
+    public static String getOverallAverageSalary(EmployeeManagement business) {
         double tot = 0;
-        
-        for (Anstalld e : Employees) {
+
+        for (Employee e : business.GetAllEmployees()) {
             tot = tot + e.getSalary();
         }
-        
-        double avg = tot / Employees.size();
-        return "The average salary across the compary is "+avg;    
+
+        double avg = tot / business.GetAllEmployees().size();
+        return "The average salary across the compary is " + avg;
     }
-    public static String getAverageSalaryByPos(){
+
+    public static String getAverageSalaryByPos(EmployeeManagement business) {
         double totTech = 0, totSales = 0, totHR = 0, totSec = 0;
         double avgTech = 0, avgSales = 0, avgHR = 0, avgSec = 0;
         int techC = 0, saleC = 0, hrC = 0, secC = 0;
-        for (Anstalld e : Employees) {
-            if (e instanceof Tekniker){
+        for (Employee e : business.GetAllEmployees()) {
+            if (e instanceof Technician) {
                 techC++;
-                totTech = totTech + e.getSalary();      
+                totTech = totTech + e.getSalary();
             }
-            if (e instanceof HR){
+            if (e instanceof HR) {
                 hrC++;
                 totHR = totHR + e.getSalary();
             }
-            if (e instanceof Sales){
+            if (e instanceof Sales) {
                 saleC++;
                 totSales = totSales + e.getSalary();
-                
+
             }
-            if (e instanceof Secretary){
+            if (e instanceof Secretary) {
                 secC++;
                 totSec = totSec + e.getSalary();
-            
+
             }
-            
+
         }
         avgTech = totTech / techC;
         avgHR = totHR / hrC;
         avgSales = totSales / saleC;
         avgSec = totSec / secC;
-    
-    return "Average salary for a technician is "+avgTech+" average salary for a salesperson is "+avgSales+" average salary for HR is "+avgHR+" and the average salary for a secretary is "+avgSec;
+
+        return "Average salary for a technician is " + avgTech + " average salary for a salesperson is " + avgSales + " average salary for HR is " + avgHR + " and the average salary for a secretary is " + avgSec;
     }
-    
+
 }
