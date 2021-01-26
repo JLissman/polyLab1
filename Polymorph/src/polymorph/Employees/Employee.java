@@ -21,40 +21,36 @@ public class Employee {
         this.Pay = Pay;
 
     }
-    
-    public void getBonus(){
-        System.out.println("Everybody got a bonus");
-    }
-    public int getID(){
-        return this.ID;
-    }
+   
     public void setID(int ID){
         this.ID = ID;
     }
-    public String getName() {
-        return Name;
-    }
-
     public void setName(String Name) {
         this.Name = Name;
     }
-
-    public String getSex() {
-        return Sex;
-    }
-
     public void setSex(String Sex) {
         this.Sex = Sex;
     }
-
-    public int getAge() {
-        return Age;
-    }
-
     public void setAge(int Age) {
         this.Age = Age;
     }
 
+   
+    public String getName() {
+        return Name;
+    }
+    public String getSex() {
+        return Sex;
+    }
+    public int getAge() {
+        return Age;
+    }
+    public int getID(){
+        return this.ID;
+    }
+    public int getBonus(){
+        return 0;
+    }
     @Override
     public String toString() {
         return "Anställd: \n " + "Name=" + Name + ", \n Sex=" + Sex + ", \n Age=" + Age + ", \n Pay=" + Pay + '}';

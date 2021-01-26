@@ -47,7 +47,26 @@ public class EmployeeManagement
         System.out.println(employee.getName() + "has been let go, during the pandemic. Way to go, buddy.");
         m_employeeList.remove(employee);
     }
-    
+    public void RemoveEmployee(int ID)
+    {
+        //Hämta employee med angivna ID
+        Employee employeeToBeFired = GetEmployee(ID);
+        
+        //Dubbell-kolla att vi faktist har en employee med det ID.
+        if(employeeToBeFired != null){
+        RemoveEmployee(employeeToBeFired);
+        }    
+    }
+    public void RemoveEmployee(String name)
+    {
+        //Hämta employee med angivna namn
+        Employee employeeToBeFired = GetEmployee(name);
+        
+        //Dubbell-kolla att vi faktist har en employee med namnet.
+        if(employeeToBeFired != null){
+        RemoveEmployee(employeeToBeFired);
+        }    
+    }
     public void ClearAll()
     {
         System.out.println("All employees have been let go. Hope you feel good about yourself");
@@ -74,6 +93,12 @@ public class EmployeeManagement
         return null;
     }
     
+    public double CalculateAllSalaries(){
+        double salaries = 0;
+        for (int i = 0; i < m_employeeList.size(); i++) {
+            salaries += m_employeeList.get(i);
+        }
+    }
     public final int GenerateID(){
         
         Random randomNumberGenerator = new Random();
