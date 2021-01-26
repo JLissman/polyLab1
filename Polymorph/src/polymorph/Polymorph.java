@@ -5,15 +5,14 @@
  */
 package polymorph;
 
+import polymorph.Employees.Employee;
 import java.util.ArrayList;
 
 
 public class Polymorph {
-    public static ArrayList<Anstalld> Employees = new ArrayList<>();
+    
 
     public static void main(String[] args) {
-        EmployeeManagement.loadEmployees();
-        System.out.println(Employees);
         
                 
         

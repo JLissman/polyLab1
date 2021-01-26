@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph;
+package polymorph.Employees;
 
 /**
  *
  * @author Jonathan
  */
-public class Anstalld {
+public class Employee {
+    int employeeId;
     String Name, Sex;
     int Age, Pay;
     
-    public Anstalld(String Name, int Age, String Sex, int Pay){
+    public Employee(String Name, int Age, String Sex, int Pay){
         this.Name = Name;
         this.Age = Age;
         this.Sex = Sex;
@@ -24,7 +25,9 @@ public class Anstalld {
     public void getBonus(){
         System.out.println("Everybody got a bonus");
     }
-
+    public int getID(){
+        return this.employeeId;
+    }
     public String getName() {
         return Name;
     }

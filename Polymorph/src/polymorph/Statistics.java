@@ -9,6 +9,7 @@ package polymorph;
  *
  * @author Jonathan
  */
-public class Statistics {
-    
+public class Statistics 
+{
+   
 }

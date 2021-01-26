@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph;
+package polymorph.Employees;
 
 /**
  *
  * @author Jonathan
  */
-public class Tekniker extends Anstalld {
+public class Tekniker extends Employee {
     int fkup;
     
     public Tekniker(String Name, int Age, String Sex, int Pay) {

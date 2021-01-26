@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph;
+package polymorph.Employees;
 
 /**
  *
  * @author Jonathan
  */
-public class Secretary extends Anstalld{
+public class HR extends Employee {
     
-    public Secretary(String Name, int Age, String Sex, int Pay) {
+    public HR(String Name, int Age, String Sex, int Pay) {
         super(Name, Age, Sex, Pay);
     }
 
     
-    public int getBonus(int hoursWorked){
-        int payout = 100 * hoursWorked;        
+    
+    public int getBonus(int cases){
+        int payout = 1000 * cases;
         return payout;
+        
+    
     }
-    
-    
-    
-    
     
 }
