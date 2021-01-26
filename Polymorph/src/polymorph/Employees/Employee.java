@@ -10,7 +10,7 @@ package polymorph.Employees;
  * @author Jonathan
  */
 public class Employee {
-    int employeeId;
+    int ID;
     String Name, Sex;
     int Age, Pay;
     
@@ -26,7 +26,10 @@ public class Employee {
         System.out.println("Everybody got a bonus");
     }
     public int getID(){
-        return this.employeeId;
+        return this.ID;
+    }
+    public void setID(int ID){
+        this.ID = ID;
     }
     public String getName() {
         return Name;
@@ -54,10 +57,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Anstalld{" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Pay + '}';
+        return "Anställd: \n " + "Name=" + Name + ", \n Sex=" + Sex + ", \n Age=" + Age + ", \n Pay=" + Pay + '}';
     }
-    
-
     
     
 }

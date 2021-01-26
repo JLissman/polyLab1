@@ -11,6 +11,7 @@ package polymorph;
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import polymorph.Employees.Employee;
 
@@ -18,31 +19,27 @@ public class EmployeeManagement
 {
     //Alla anställda i företagets 
     ArrayList<Employee> m_employeeList;
-    
+
     public void AddEmployee(Employee employee)
     {
-        int possibleEmployeeID = employee.getID();
+        //Cache-a ID och namnet på den anställda för att kolla om det redan finns en anställd med samma information.
         String possibleEmployeeName = employee.getName();
         
-        for (int i = 0; i < m_employeeList.size(); i++) {
-            if(m_employeeList.get(i).getID() == possibleEmployeeID)
+        for (int i = 0; i < m_employeeList.size(); i++) 
+        {
+            //Finns det redan en anställd med samma namn?
+            if(m_employeeList.get(i).getName().equals(possibleEmployeeName))
             {
-                System.out.println("An employee with the ID: " + possibleEmployeeID + " already exists!");
-                return;
-            }
-            else if(m_employeeList.get(i).getName().equals(possibleEmployeeName))
-            {
-                System.out.println("An employee with the name: " + possibleEmployeeName + " already exists!");
+                System.out.println("An employee by the name: " + possibleEmployeeName + " already exists!");
                 return;
             }
         }
         
+        int uniqueID = GenerateID();
+        employee.setID(uniqueID);
+        
         System.out.println(employee.getName() + " has joined the team!");
         m_employeeList.add(employee);
-    }
-   
-    public void AddEmployee(String name){
-        
     }
     
     public void RemoveEmployee(Employee employee)
@@ -75,5 +72,23 @@ public class EmployeeManagement
         }
         System.out.println("No employee with the name: " + name + "!");
         return null;
+    }
+    
+    public final int GenerateID(){
+        
+        Random randomNumberGenerator = new Random();
+        int tempId;
+        do{
+            tempId = randomNumberGenerator.nextInt(10000);
+            if(m_employeeList.size() <= 0)
+                return tempId;
+        
+            for (int i = 0; i < m_employeeList.size(); i++) {
+                if(m_employeeList.get(i).getID() == tempId)
+                    tempId = -1;
+            }
+        }while(tempId == -1);
+        
+        return tempId;
     }
 }
