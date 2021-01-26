@@ -10,51 +10,54 @@ package polymorph.Employees;
  * @author Jonathan
  */
 public class Employee {
-    int ID;
+    int employeeId;
     String Name, Sex;
-    int Age, Pay;
+    int Age, Salary;
     
-    public Employee(String Name, int Age, String Sex, int Pay){
+    public Employee(String Name, int Age, String Sex, int Salary){
         this.Name = Name;
         this.Age = Age;
         this.Sex = Sex;
-        this.Pay = Pay;
+        this.Salary = Salary;
 
     }
-   
-    public void setID(int ID){
-        this.ID = ID;
+    
+    public void getBonus(){
+        System.out.println("Everybody got a bonus");
     }
+    public int getID(){
+        return this.employeeId;
+    }
+    public String getName() {
+        return Name;
+    }
+
     public void setName(String Name) {
         this.Name = Name;
     }
+
+    public String getSex() {
+        return Sex;
+    }
+
     public void setSex(String Sex) {
         this.Sex = Sex;
     }
+
+    public int getAge() {
+        return Age;
+    }
+
     public void setAge(int Age) {
         this.Age = Age;
     }
 
-   
-    public String getName() {
-        return Name;
-    }
-    public String getSex() {
-        return Sex;
-    }
-    public int getAge() {
-        return Age;
-    }
-    public int getID(){
-        return this.ID;
-    }
-    public int getBonus(){
-        return 0;
-    }
     @Override
     public String toString() {
-        return "Anställd: \n " + "Name=" + Name + ", \n Sex=" + Sex + ", \n Age=" + Age + ", \n Pay=" + Pay + '}';
+        return "Anstalld{" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + '}';
     }
+    
+
     
     
 }

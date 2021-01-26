@@ -24,5 +24,7 @@ public class Sales extends Employee {
     
     }
     
-    
+        public String getPosition(){
+    return "Sales";
+}
 }

@@ -20,7 +20,9 @@ public class Secretary extends Employee{
         int payout = 100 * hoursWorked;        
         return payout;
     }
-    
+        public String getPosition(){
+    return "Secretary";
+}
     
     
     

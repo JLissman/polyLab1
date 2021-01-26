@@ -21,5 +21,7 @@ public class Tekniker extends Employee {
         int payout = 30000 / fkup;
         return payout;
     }
-    
+        public String getPosition(){
+    return "Technician";
+}
 }
