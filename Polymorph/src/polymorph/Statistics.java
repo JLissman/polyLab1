@@ -17,8 +17,8 @@ public class Statistics {
     
     
     public String getLowestSalary(){
-        int min = EmpolyeeManagement.m_employeeList.get(0).getSalary();
-        String name = EmpolyeeManagement.m_employeeList.get(0).getName();
+        int min = 140000;
+        String name;
         
         for (Employee e : EmpolyeeManagement.m_employeeList) {
             if (e.getSalary() < min){

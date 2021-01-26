@@ -32,6 +32,14 @@ public class Employee {
         return Name;
     }
 
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void setSalary(int Salary) {
+        this.Salary = Salary;
+    }
+    
     public void setName(String Name) {
         this.Name = Name;
     }

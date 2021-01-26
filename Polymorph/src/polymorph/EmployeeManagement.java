@@ -18,7 +18,7 @@ import polymorph.Employees.Employee;
 public class EmployeeManagement 
 {
     //Alla anställda i företagets 
-    ArrayList<Employee> m_employeeList;
+    public ArrayList<Employee> m_employeeList;
 
     public void AddEmployee(Employee employee)
     {
@@ -36,7 +36,7 @@ public class EmployeeManagement
         }
         
         int uniqueID = GenerateID();
-        employee.setID(uniqueID);
+        employee.setEmployeeId(uniqueID);
         
         System.out.println(employee.getName() + " has joined the team!");
         m_employeeList.add(employee);
