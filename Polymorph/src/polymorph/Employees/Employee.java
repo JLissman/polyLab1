@@ -10,7 +10,7 @@ package polymorph.Employees;
  * @author Jonathan
  */
 public class Employee {
-    int employeeId;
+    int ID;
     String Name, Sex;
     int Age, Salary;
     
@@ -26,14 +26,14 @@ public class Employee {
         System.out.println("Everybody got a bonus");
     }
     public int getID(){
-        return this.employeeId;
+        return this.ID;
     }
     public String getName() {
         return Name;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setID(int employeeId) {
+        this.ID = employeeId;
     }
 
     public void setSalary(int Salary) {

@@ -36,7 +36,7 @@ public class EmployeeManagement
         }
         
         int uniqueID = GenerateID();
-        employee.setEmployeeId(uniqueID);
+        employee.setID(uniqueID);
         
         System.out.println(employee.getName() + " has joined the team!");
         m_employeeList.add(employee);
@@ -93,7 +93,9 @@ public class EmployeeManagement
         return null;
     }
     
-    
+    public ArrayList<Employee> EmployeeGetAllEmployees(){
+        return m_employeeList;
+    }
     public final int GenerateID(){
         
         Random randomNumberGenerator = new Random();
