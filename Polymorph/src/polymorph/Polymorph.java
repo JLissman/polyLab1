@@ -6,20 +6,14 @@
 package polymorph;
 
 import java.util.ArrayList;
-import static polymorph.EmployeeManagement.loadEmployees;
 
 
 public class Polymorph {
     public static ArrayList<Anstalld> Employees = new ArrayList<>();
 
     public static void main(String[] args) {
-        loadEmployees();
+        EmployeeManagement.loadEmployees();
         System.out.println(Employees);
-        
-        
-        
-        
-        
         
                 
         
