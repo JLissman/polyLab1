@@ -93,12 +93,7 @@ public class EmployeeManagement
         return null;
     }
     
-    public double CalculateAllSalaries(){
-        double salaries = 0;
-        for (int i = 0; i < m_employeeList.size(); i++) {
-            salaries += m_employeeList.get(i);
-        }
-    }
+    
     public final int GenerateID(){
         
         Random randomNumberGenerator = new Random();
