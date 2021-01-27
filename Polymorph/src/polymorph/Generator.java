@@ -17,6 +17,14 @@ import polymorph.Employees.Technician;
  *
  * @author Jonathan & Salar
  */
+
+enum POS {
+Technician,
+HR,
+Sales,
+Secretary,
+None
+}
 public class Generator {
   
     Random RNG = new Random();
@@ -53,49 +61,45 @@ public class Generator {
         }
     }
 
-    public String Position() {
+    public POS Position() {
 
         int random = RNG.nextInt(4);
         String pos = "";
         switch (random) {
             case (0):
-                pos = "HR";
-                break;
+                return POS.HR;
             case (1):
-                pos = "Sales";
-                break;
+                return POS.Sales;
             case (2):
-                pos = "Secretary";
-                break;
+                return POS.Secretary;
             case (3):
-                pos = "Technician";
-                break;
+                return POS.Technician;
             default:
-                break;
+                return POS.None;
         }
-        return pos;
+
     }
 
 
-    public int Salary(String position) {
+    public int Salary(POS position) {
         int min = 20000, salary = 0;
         switch (position) {
-            case "HR":
+            case HR:
                 while (salary < min) {
                     salary = RNG.nextInt(35000);
                 }
                 break;
-            case "Sales":
+            case Sales:
                 while (salary < min) {
                     salary = RNG.nextInt(40000);
                 }
                 break;
-            case "Secretary":
+            case Secretary:
                 while (salary < min) {
                     salary = RNG.nextInt(30000);
                 }
                 break;
-            case "Technician":
+            case Technician:
                 while (salary < min) {
                     salary = RNG.nextInt(35000);
                 }
@@ -116,24 +120,31 @@ public class Generator {
             int age = gen.Age();
             String sex = gen.Sex(fname);
             String name = fname+" "+lname;
-            String position = gen.Position();
+            POS position = gen.Position();
             int salary = gen.Salary(position);
-            if (position.equals("HR")) {
+            
+            switch(position){
+                case HR: {
                 HR e1 = new HR(name, age, sex, salary);
                 business.AddEmployee(e1);
-            } else if (position.equals("Sales")) {
+                break;
+            } 
+                case Sales:{
                 Sales e1 = new Sales(name, age, sex, salary);
                 business.AddEmployee(e1);
+                break;
 
-            } else if (position.equals("Secretary")) {
+            }  case Secretary: {
                 Secretary e1 = new Secretary(name, age, sex, salary);
                 business.AddEmployee(e1);
+                break;
 
-            } else if (position.equals("Technician")) {
+            } case Technician: {
                 Technician e1 = new Technician(name, age, sex, salary);
                 business.AddEmployee(e1);
+                break;
 
-            }
+            }}
 
         }
         return business;
