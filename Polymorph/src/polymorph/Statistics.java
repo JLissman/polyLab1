@@ -56,7 +56,7 @@ public class Statistics {
         }
 
         double avg = tot / business.GetAllEmployees().size();
-        return "The average salary across the compary is " + avg;
+        return "The average salary across the compary is " + formaterare.format(avg);
     }
 
     public static String getAverageSalaryByPos(EmployeeManagement business) {
@@ -89,7 +89,7 @@ public class Statistics {
         avgSales = totSales / saleC;
         avgSec = totSec / secC;
 
-        return "Average salary for a technician is " + avgTech + " average salary for a salesperson is " + avgSales + " average salary for HR is " + avgHR + " and the average salary for a secretary is " + avgSec;
+        return "The average salary for a Technician is " + formaterare.format(avgTech) + " \nThe average salary for a salesperson is " + formaterare.format(avgSales) + " \nThe average salary for HR is " + formaterare.format(avgHR) + "\nThe average salary for a secretary is " + formaterare.format(avgSec);
     }
     
     public static String getSexAverages(EmployeeManagement business){
