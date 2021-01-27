@@ -7,7 +7,7 @@ package polymorph.Employees;
 
 /**
  *
- * @author Jonathan
+ * @author Jonathan & Salar
  */
 public class Technician extends Employee {
     int fkup;

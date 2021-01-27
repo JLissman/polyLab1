@@ -15,6 +15,8 @@ public class Application {
         System.out.println(Statistics.getOverallAverageSalary(business));
         System.out.println(Statistics.getLowestSalary(business));
         System.out.println(Statistics.getHighestSalary(business));
+        System.out.println(Statistics.getSexAverages(business));
+        System.out.println(Statistics.getSexByPosition(business));
     }
-
+ 
 }

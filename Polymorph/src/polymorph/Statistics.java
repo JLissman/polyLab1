@@ -7,13 +7,13 @@ package polymorph;
 
 import polymorph.Employees.*;
 import polymorph.EmployeeManagement.*;
-
+import java.text.DecimalFormat;
 /**
  *
- * @author Jonathan
+ * @author Jonathan & Salar
  */
 public class Statistics {
-
+    static DecimalFormat formaterare = new DecimalFormat("#0.00");
     public static String getLowestSalary(EmployeeManagement business) {
         int min = 140000;
         String name = "", pos = "";
@@ -91,5 +91,76 @@ public class Statistics {
 
         return "Average salary for a technician is " + avgTech + " average salary for a salesperson is " + avgSales + " average salary for HR is " + avgHR + " and the average salary for a secretary is " + avgSec;
     }
-
+    
+    public static String getSexAverages(EmployeeManagement business){
+        double male = 0, female = 0;
+        for (Employee e : business.GetAllEmployees()) {
+            String sex = e.getSex();
+            if (sex == "Male"){
+                male++;
+            }else if (sex == "Female"){
+                female++;
+            }else{
+                System.out.println("No sex??");
+            }
+        }
+        double tot = male+female;
+        double malePerc = male/tot*100;
+        double fmalePerc = female/tot*100;
+                
+    return "Out of all "+tot+" employees, "+formaterare.format(malePerc)+"% is male and "+formaterare.format(fmalePerc)+"% is female";
+    }
+    
+    public static String getSexByPosition(EmployeeManagement business){
+        double techM = 0, hrM = 0, saleM = 0, secM = 0;
+        double techF = 0, hrF = 0, saleF = 0, secF = 0;
+        for (Employee e : business.GetAllEmployees()){
+            String sex = e.getSex();
+            String pos = e.getPosition();
+            switch(sex){
+                case("Male"):{
+                
+                switch(pos){
+                    case("HR"):
+                        hrM++;
+                        break;
+                    case("Sales"):
+                        saleM++;
+                        break;
+                    case("Secretary"):
+                        secM++;
+                        break;
+                    case("Technician"):
+                        techM++;
+                        break;
+                    default:
+                        System.out.println("no position found");
+                        break;
+                }
+                }
+                case("Female"):{
+                switch(pos){
+                    case("HR"):
+                        hrF++;
+                        break;
+                    case("Sales"):
+                        saleF++;
+                        break;
+                    case("Secretary"):
+                        secF++;
+                        break;
+                    case("Technician"):
+                        techF++;
+                        break;
+                    default:
+                        System.out.println("no position found");
+                        break;
+                }
+            }}
+            
+        }
+        System.out.println(techM);
+        System.out.println(techF);
+    return "Out of "+(techM+techF)+" technicians there is "+formaterare.format((techM/(techM+techF))*100)+"% males and "+formaterare.format((techF/(techM+techF))*100)+"% females.\nOut of "+(hrM+hrF)+" in HR there is "+formaterare.format((hrM/(hrM+hrF))*100)+"& males and "+formaterare.format((hrF/(hrM+hrF))*100)+"% females. \nOut of "+(saleM+saleF)+" in Sales there is "+formaterare.format((saleM/(saleM+saleF))*100)+"& males and "+formaterare.format((saleF/(saleM+saleF))*100)+"% females. \nOut of "+(secM+secF)+" Secretaries there is "+formaterare.format((secM/(secM+secF))*100)+"& males and "+formaterare.format((secF/(secM+secF))*100)+"% females. ";
+    }
 }

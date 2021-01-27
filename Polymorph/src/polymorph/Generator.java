@@ -15,7 +15,7 @@ import polymorph.Employees.Technician;
 
 /**
  *
- * @author Jonathan
+ * @author Jonathan & Salar
  */
 public class Generator {
   
@@ -27,10 +27,15 @@ public class Generator {
     public String Name() {
         index = RNG.nextInt(50);
         String fname = randomNames.get(index);
+        return fname;
+    }
+    public String LName(){
         int indexTwo = RNG.nextInt(100);
         String lname = efterNamn.get(indexTwo);
-        return fname + " " + lname;
+        return lname;
+    
     }
+    
     public int Age() {
         int min = 25, result = 0;
         while (result < min) {
@@ -40,7 +45,7 @@ public class Generator {
     }
     public String Sex(String Name) {
         int index = randomNames.indexOf(Name);
-
+        System.out.println("index="+index);
         if (index % 2 == 0) {
             return "Female";
         } else {
@@ -106,9 +111,11 @@ public class Generator {
         Generator gen = new Generator();
         int x = RNG.nextInt(200);
         for (int i = 0; i < workers; i++) {
-            String name = gen.Name();
+            String fname = gen.Name();
+            String lname = gen.LName();
             int age = gen.Age();
-            String sex = gen.Sex(name);
+            String sex = gen.Sex(fname);
+            String name = fname+" "+lname;
             String position = gen.Position();
             int salary = gen.Salary(position);
             if (position.equals("HR")) {

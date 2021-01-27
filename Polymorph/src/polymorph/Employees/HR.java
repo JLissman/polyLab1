@@ -7,7 +7,7 @@ package polymorph.Employees;
 
 /**
  *
- * @author Jonathan
+ * @author Jonathan & Salar
  */
 public class HR extends Employee {
     
