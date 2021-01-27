@@ -7,7 +7,9 @@ package polymorph;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        System.out.println("Välkommen!");
         Generator gen = new Generator();
         EmployeeManagement business = gen.Business(30);
         business.PrintAllEmployees();
