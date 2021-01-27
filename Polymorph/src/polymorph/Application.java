@@ -5,7 +5,7 @@
  */
 package polymorph;
 
-public class Polymorph {
+public class Application {
 
     public static void main(String[] args) {
         Generator gen = new Generator();

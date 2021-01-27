@@ -26,6 +26,6 @@ public class HR extends Employee {
     
     public String getPosition(){
     return "HR";
-}
+    }
     
 }

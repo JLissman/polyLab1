@@ -25,7 +25,7 @@ public class Employee {
     public void getBonus(){
         System.out.println("Everybody got a bonus");
     }
-    
+   
     public String getPosition(){
         return "Everyody got a position";
     }

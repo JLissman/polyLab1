@@ -24,7 +24,8 @@ public class Sales extends Employee {
     
     }
     
-        public String getPosition(){
+    @Override
+    public String getPosition(){
     return "Sales";
-}
+    }
 }
