@@ -15,22 +15,20 @@ import Polymorph.src.Program.EmployeeManagement;
 
 public class Generator {
 
-    static Random RNG = new Random();
+    static Random m_random = new Random();
     static ArrayList<String>  firstNameList = new ArrayList<>(Arrays.asList("Maria", "Erik", "Anna", "Lars", "Margareta", "Karl", "Elisabeth", "Anders", "Eva", "Johan", "Kristina", "Per", "Birgitta", "Nils", "Karin", "Carl", "Marie", "Mikael", "Elisabet", "Jan", "Ingrid", "Hans", "Christina", "Peter", "Sofia", "Olof", "Linnéa", "Lennart", "Kerstin", "Gunnar", "Lena", "Sven", "Helena", "Fredrik", "Marianne", "Daniel", "Emma", "Bengt", "Linnea", "Bo", "Johanna", "Alexander", "Inger", "Gustav", "Sara", "Göran", "Cecilia", "Åke", "Elin", "Magnus"));
     static ArrayList<String> surNameList   = new ArrayList<>(Arrays.asList("Andersson", "Johansson", "Karlsson", "Nilsson", "Eriksson", "Larsson", "Olsson", "Persson", "Svensson", "Gustafsson", "Pettersson", "Jonsson", "Jansson", "Hansson", "Bengtsson", "Jönsson", "Lindberg", "Jakobsson", "Magnusson", "Olofsson", "Lindström", "Lindqvist", "Lindgren", "Axelsson", "Berg", "Bergström", "Lundberg", "Lind", "Lundgren", "Lundqvist", "Mattsson", "Berglund", "Fredriksson", "Sandberg", "Henriksson", "Forsberg", "Sjöberg", "Wallin", "Ali", "Engström", "Mohamed", "Eklund", "Danielsson", "Lundin", "Håkansson", "Björk", "Bergman", "Gunnarsson", "Holm", "Wikström", "Samuelsson", "Isaksson", "Fransson", "Bergqvist", "Nyström", "Holmberg", "Arvidsson", "Löfgren", "Söderberg", "Nyberg", "Blomqvist", "Claesson", "Nordström", "Mårtensson", "Lundström", "Ahmed", "Viklund", "Björklund", "Eliasson", "Pålsson", "Hassan", "Berggren", "Sandström", "Lund", "Nordin", "Ström", "Åberg", "Hermansson", "Ekström", "Falk", "Holmgren", "Dahlberg", "Hellström", "Hedlund", "Sundberg", "Sjögren", "Ek", "Blom", "Abrahamsson", "Martinsson", "Öberg", "Andreasson", "Strömberg", "Månsson", "Åkesson", "Hansen", "Norberg", "Lindholm", "Dahl", "Jonasson"));
 
     public static String[] GenerateFullName()
     {
         int index;
-        index = RNG.nextInt(firstNameList.size());
+        index = m_random.nextInt(firstNameList.size());
         String[] fname = new String[2];
 
         fname[0] = firstNameList.get(index);
         fname[1] = surNameList.get(index);
         return fname;
     }
-
-    
     public static int GenerateAge()
     {
         int minAge = 20, maxAge = 65;
@@ -48,10 +46,9 @@ public class Generator {
             return "Male";
         }
     }
-
     public static JobBranch GenJobBranch()
     {
-        int random = RNG.nextInt(4);
+        int random = m_random.nextInt(4);
         switch (random) {
             case (0):
                 return JobBranch.HR;
@@ -126,7 +123,7 @@ public class Generator {
     //Generate a number between (inclusive) MIN - (inclusive) MAX
     public static int NextMinMax(int min, int max)
     {
-        return RNG.nextInt((max + 1) - min) + min;
+        return m_random.nextInt((max + 1) - min) + min;
     }
-
+    
 }

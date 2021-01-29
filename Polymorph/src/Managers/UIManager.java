@@ -1,4 +1,4 @@
-package Polymorph.src.Menu;
+package Polymorph.src.Managers;
 
 
 /**
@@ -6,7 +6,6 @@ package Polymorph.src.Menu;
  * @author Jonathan & Salar
  */
 
-//Klassen är en singleton för att göra det möjligt att overrida funktioner via sub-klasser men endå behandla de som static metoder.
 public class UIManager
 {
     private static UIManager m_instance = null;

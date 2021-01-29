@@ -1,4 +1,4 @@
-package Polymorph.src.Menu;
+package Polymorph.src.Managers;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Jonathan & Salar
  */
 
-public class Input
+public class InputManager
 {
     static Scanner sc = new Scanner(System.in);
 
