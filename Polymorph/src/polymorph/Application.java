@@ -11,7 +11,7 @@ public class Application {
     {
         System.out.println("Välkommen!");
         Generator gen = new Generator();
-        EmployeeManagement business = gen.Business(30);
+        EmployeeManagement business = gen.GenerateWorkers(30);
         business.PrintAllEmployees();
         System.out.println(Statistics.getAverageSalaryByPos(business));
         System.out.println(Statistics.getOverallAverageSalary(business));
