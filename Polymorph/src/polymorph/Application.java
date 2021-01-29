@@ -14,10 +14,8 @@ public class Application {
     {
         System.out.println("Välkommen!");
 
-        String x = Input.Instance().GetString(false, "test");
-        if(x == null){
-            System.out.print("error");
-        }
+        String x = Input.GetString(false, "test");
+
         //EmployeeManagement someRandomBusiness = Generator.GenerateWorkers(30);
         //someRandomBusiness.PrintAllEmployees();
 
