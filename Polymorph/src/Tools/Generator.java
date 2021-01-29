@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package polymorph;
+
+package Polymorph.src.Tools;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import polymorph.Employees.HR;
-import polymorph.Employees.Sales;
-import polymorph.Employees.Secretary;
-import polymorph.Employees.Technician;
+
+import Polymorph.src.Program.Employees.*;
+import Polymorph.src.Program.EmployeeManagement;
 
 /**
  *
@@ -19,7 +14,7 @@ import polymorph.Employees.Technician;
  */
 
 public class Generator {
-  
+
     static Random RNG = new Random();
     static ArrayList<String>  firstNameList = new ArrayList<>(Arrays.asList("Maria", "Erik", "Anna", "Lars", "Margareta", "Karl", "Elisabeth", "Anders", "Eva", "Johan", "Kristina", "Per", "Birgitta", "Nils", "Karin", "Carl", "Marie", "Mikael", "Elisabet", "Jan", "Ingrid", "Hans", "Christina", "Peter", "Sofia", "Olof", "Linnéa", "Lennart", "Kerstin", "Gunnar", "Lena", "Sven", "Helena", "Fredrik", "Marianne", "Daniel", "Emma", "Bengt", "Linnea", "Bo", "Johanna", "Alexander", "Inger", "Gustav", "Sara", "Göran", "Cecilia", "Åke", "Elin", "Magnus"));
     static ArrayList<String> surNameList   = new ArrayList<>(Arrays.asList("Andersson", "Johansson", "Karlsson", "Nilsson", "Eriksson", "Larsson", "Olsson", "Persson", "Svensson", "Gustafsson", "Pettersson", "Jonsson", "Jansson", "Hansson", "Bengtsson", "Jönsson", "Lindberg", "Jakobsson", "Magnusson", "Olofsson", "Lindström", "Lindqvist", "Lindgren", "Axelsson", "Berg", "Bergström", "Lundberg", "Lind", "Lundgren", "Lundqvist", "Mattsson", "Berglund", "Fredriksson", "Sandberg", "Henriksson", "Forsberg", "Sjöberg", "Wallin", "Ali", "Engström", "Mohamed", "Eklund", "Danielsson", "Lundin", "Håkansson", "Björk", "Bergman", "Gunnarsson", "Holm", "Wikström", "Samuelsson", "Isaksson", "Fransson", "Bergqvist", "Nyström", "Holmberg", "Arvidsson", "Löfgren", "Söderberg", "Nyberg", "Blomqvist", "Claesson", "Nordström", "Mårtensson", "Lundström", "Ahmed", "Viklund", "Björklund", "Eliasson", "Pålsson", "Hassan", "Berggren", "Sandström", "Lund", "Nordin", "Ström", "Åberg", "Hermansson", "Ekström", "Falk", "Holmgren", "Dahlberg", "Hellström", "Hedlund", "Sundberg", "Sjögren", "Ek", "Blom", "Abrahamsson", "Martinsson", "Öberg", "Andreasson", "Strömberg", "Månsson", "Åkesson", "Hansen", "Norberg", "Lindholm", "Dahl", "Jonasson"));
@@ -76,7 +71,8 @@ public class Generator {
     public static int GenerateRandomSalary(JobBranch position)
     {
         int min = 20000;
-        switch (position) {
+        switch (position)
+        {
             case HR:         return NextMinMax(min, 35000);
             case Sales:      return NextMinMax(min, 40000);
             case Secretary:  return NextMinMax(min, 30000);

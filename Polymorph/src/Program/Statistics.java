@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package polymorph;
+package Polymorph.src.Program;
 
-import polymorph.Employees.*;
-import polymorph.EmployeeManagement.*;
+import Polymorph.src.Program.Employees.*;
+
 import java.text.DecimalFormat;
 /**
  *
  * @author Jonathan & Salar
  */
-public class Statistics {
+public class Statistics
+{
     static DecimalFormat formaterare = new DecimalFormat("#0.00");
-    public static String getLowestSalary(EmployeeManagement business) {
-        int min = 140000;
+    public static String getLowestSalary(EmployeeManagement business)
+    {
+        int min = Integer.MAX_VALUE;
         String name = "", pos = "";
 
         for (Employee e : business.GetAllEmployees()) {
@@ -32,8 +29,9 @@ public class Statistics {
 
     }
 
-    public static String getHighestSalary(EmployeeManagement business) {
-        int max = 0;
+    public static String getHighestSalary(EmployeeManagement business)
+    {
+        int max = Integer.MIN_VALUE;
         String name = "", pos = "";
         for (Employee e : business.GetAllEmployees()) {
             if (e.getSalary() > max) {
@@ -45,10 +43,10 @@ public class Statistics {
         }
 
         return "The highest salary is " + max + " and is held by " + name + " that works at position " + pos;
-
     }
 
-    public static String getOverallAverageSalary(EmployeeManagement business) {
+    public static String getOverallAverageSalary(EmployeeManagement business)
+    {
         double tot = 0;
 
         for (Employee e : business.GetAllEmployees()) {
@@ -59,11 +57,13 @@ public class Statistics {
         return "The average salary across the compary is " + formaterare.format(avg);
     }
 
-    public static String getAverageSalaryByPos(EmployeeManagement business) {
+    public static String getAverageSalaryByPos(EmployeeManagement business)
+    {
         double totTech = 0, totSales = 0, totHR = 0, totSec = 0;
         double avgTech = 0, avgSales = 0, avgHR = 0, avgSec = 0;
         int techC = 0, saleC = 0, hrC = 0, secC = 0;
-        for (Employee e : business.GetAllEmployees()) {
+        for (Employee e : business.GetAllEmployees())
+        {
             if (e instanceof Technician) {
                 techC++;
                 totTech = totTech + e.getSalary();
@@ -89,7 +89,10 @@ public class Statistics {
         avgSales = totSales / saleC;
         avgSec = totSec / secC;
 
-        return "The average salary for a Technician is " + formaterare.format(avgTech) + " \nThe average salary for a salesperson is " + formaterare.format(avgSales) + " \nThe average salary for HR is " + formaterare.format(avgHR) + "\nThe average salary for a secretary is " + formaterare.format(avgSec);
+        return    "The average salary for a Technician is "  + formaterare.format(avgTech) + " " +
+                "\nThe average salary for a salesperson is " + formaterare.format(avgSales) + " " +
+                "\nThe average salary for HR is "            + formaterare.format(avgHR) +
+                "\nThe average salary for a secretary is "   + formaterare.format(avgSec);
     }
     
     public static String getSexAverages(EmployeeManagement business){
@@ -161,6 +164,9 @@ public class Statistics {
         }
         System.out.println(techM);
         System.out.println(techF);
-    return "Out of "+(techM+techF)+" technicians there is "+formaterare.format((techM/(techM+techF))*100)+"% males and "+formaterare.format((techF/(techM+techF))*100)+"% females.\nOut of "+(hrM+hrF)+" in HR there is "+formaterare.format((hrM/(hrM+hrF))*100)+"& males and "+formaterare.format((hrF/(hrM+hrF))*100)+"% females. \nOut of "+(saleM+saleF)+" in Sales there is "+formaterare.format((saleM/(saleM+saleF))*100)+"& males and "+formaterare.format((saleF/(saleM+saleF))*100)+"% females. \nOut of "+(secM+secF)+" Secretaries there is "+formaterare.format((secM/(secM+secF))*100)+"& males and "+formaterare.format((secF/(secM+secF))*100)+"% females. ";
+    return    "Out of "+(techM+techF)+" technicians there are "+formaterare.format((techM/(techM+techF))*100)+"% males and "+formaterare.format((techF/(techM+techF))*100)+"% females." +
+            "\nOut of "+(hrM+hrF)+" in HR there is "+formaterare.format((hrM/(hrM+hrF))*100)+"% males and "+formaterare.format((hrF/(hrM+hrF))*100)+"% females. " +
+            "\nOut of "+(saleM+saleF)+" in Sales there is "+formaterare.format((saleM/(saleM+saleF))*100)+"% males and "+formaterare.format((saleF/(saleM+saleF))*100)+"% females. " +
+            "\nOut of "+(secM+secF)+" Secretaries there is "+formaterare.format((secM/(secM+secF))*100)+"% males and "+formaterare.format((secF/(secM+secF))*100)+"% females. ";
     }
 }

@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package polymorph;
+package Polymorph.src.Program;
 
 /**
  *
@@ -13,7 +8,7 @@ package polymorph;
 import java.util.ArrayList;
 import java.util.Random;
 
-import polymorph.Employees.Employee;
+import Polymorph.src.Program.Employees.*;
 
 public class EmployeeManagement 
 {
@@ -113,7 +108,8 @@ public class EmployeeManagement
         
         return tempId;
     }
-    public void PrintAllEmployees(){
+    public void PrintAllEmployees()
+    {
         for (int i = 0; i < m_employeeList.size(); i++) {
             System.out.println("Name: "+m_employeeList.get(i).getName());
             System.out.println("Age: "+m_employeeList.get(i).getAge());

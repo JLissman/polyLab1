@@ -1,7 +1,7 @@
-package polymorph.Menu;
+package Polymorph.src.Menu;
+
 import java.util.Arrays;
 import java.util.Scanner;
-
 
 /**
  *
@@ -15,14 +15,12 @@ public class Input
     //Vår egna get metod för att mata in en int/double/String
     public static int GetInt()
     {
-        int temp = sc.nextInt();
-        sc.nextLine();
+        int temp = Integer.parseInt(GetString());
         return temp;
     }
     public static double  GetDouble()
     {
-        double temp = sc.nextDouble();
-        sc.nextLine();
+        double temp = Double.parseDouble(GetString());
         return temp;
     }
     public static String GetString()
@@ -44,6 +42,14 @@ public class Input
 
         return temp;
     }
+    public static int GetBetween(int start, int end)
+    {
+        int temp = GetInt();
+        if(temp < start || temp > end)
+            return -1;
+
+        return temp;
+    }
     public static double GetDouble(double... constraint)
     {
         double temp = GetDouble();
@@ -56,6 +62,14 @@ public class Input
 
         return temp;
     }
+    public static double GetBetween(double start, double end)
+    {
+        double temp = GetDouble();
+        if(temp < start || temp > end)
+            return -1;
+
+        return temp;
+    }
     public static String GetString(boolean isCaseSensitive, String... constraint)
     {
         if(!isCaseSensitive)
@@ -65,7 +79,7 @@ public class Input
             {
                 constraint[i] = constraint[i].toLowerCase();
             }
-            if(!Arrays.stream(constraint).anyMatch(i -> lowerCaseInput.equals(i)))
+            if(Arrays.stream(constraint).noneMatch(i -> lowerCaseInput.equals(i)))
                 return null;
 
             return lowerCaseInput;
@@ -73,7 +87,7 @@ public class Input
         else
         {
             String normalCase = GetString();
-            if(!Arrays.stream(constraint).anyMatch(i -> normalCase.equals(i)))
+            if(Arrays.stream(constraint).noneMatch(i -> normalCase.equals(i)))
                 return null;
 
             return normalCase;

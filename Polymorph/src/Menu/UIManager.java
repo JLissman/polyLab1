@@ -1,4 +1,4 @@
-package polymorph.Menu;
+package Polymorph.src.Menu;
 
 
 /**
@@ -24,16 +24,16 @@ public class UIManager
             return;
 
         System.out.println  ("||||||||||||||||--" + menuTitle + "--||||||||||||||||");
-        System.out.println  ("///");
+        System.out.println  ("|||");
 
         for (int i = 0; i < options.length; i++) {
-            System.out.println("/// > " + (i+1) + ". " + options[i] );
+            System.out.println("||| > " + (i+1) + ". " + options[i] );
         }
 
-        System.out.println  ("///");
-        System.out.println  ("///////////////");
-        System.out.println  ("/// > 0. exit");
+        System.out.println  ("|||");
         System.out.println  ("||||||||||||||||||||||||||||||||||||||||||||");
-        System.out.print("Choice > ");
+        System.out.println  ("||| > 0. exit ");
+        System.out.println  ("||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.print("[Input] > ");
     }
 }

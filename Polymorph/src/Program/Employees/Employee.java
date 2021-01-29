@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph.Employees;
+package Polymorph.src.Program.Employees;
 
-import polymorph.Generator;
+
+import Polymorph.src.Tools.Generator;
 
 /**
  *
@@ -36,9 +37,11 @@ public class Employee {
         System.out.println("No bonus");
     }
    
-    public String getPosition(){
+    public String getPosition()
+    {
         return "No position";
     }
+
     public int getID(){
         return this.ID;
     }
@@ -80,7 +83,12 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee[" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + ", Position =" + ']';
+        return "Employee[" +
+                  "Name=" + Name +
+                ", Sex=" + Sex +
+                ", Age=" + Age +
+                ", Pay=" + Salary +
+                ", Position =" + ']';
     }
 
 }

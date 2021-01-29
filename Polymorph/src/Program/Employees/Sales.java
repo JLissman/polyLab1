@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph.Employees;
+package Polymorph.src.Program.Employees;
 
-import polymorph.Generator;
+import Polymorph.src.Tools.Generator;
 
 /**
  *
@@ -19,6 +19,7 @@ public class Sales extends Employee {
     }
     public Sales(String Name, int Age, String Sex)
     {
+
         super(Name, Age, Sex, Generator.NextMinMax(20000, 40000));
     }
 
