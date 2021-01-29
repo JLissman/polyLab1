@@ -5,16 +5,24 @@
  */
 package polymorph.Employees;
 
+import polymorph.Generator;
+
 /**
  *
  * @author Jonathan & Salar
  */
-public class HR extends Employee {
+public class HR extends Employee
+{
     
-    public HR(String Name, int Age, String Sex, int Pay) {
+    public HR(String Name, int Age, String Sex, int Pay)
+    {
         super(Name, Age, Sex, Pay);
     }
 
+    public HR(String Name, int Age, String Sex)
+    {
+        super(Name, Age, Sex, Generator.NextMinMax(20000, 35000));
+    }
     
     
     public int getBonus(int cases){

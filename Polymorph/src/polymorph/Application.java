@@ -5,20 +5,34 @@
  */
 package polymorph;
 
+import polymorph.Menu.Input;
+import polymorph.Menu.UIManager;
+
 public class Application {
 
     public static void main(String[] args)
     {
         System.out.println("Välkommen!");
-        Generator gen = new Generator();
-        EmployeeManagement business = gen.GenerateWorkers(30);
-        business.PrintAllEmployees();
-        System.out.println(Statistics.getAverageSalaryByPos(business));
-        System.out.println(Statistics.getOverallAverageSalary(business));
-        System.out.println(Statistics.getLowestSalary(business));
-        System.out.println(Statistics.getHighestSalary(business));
-        System.out.println(Statistics.getSexAverages(business));
-        System.out.println(Statistics.getSexByPosition(business));
-    }
- 
+
+        String x = Input.Instance().GetString(false, "test");
+        if(x == null){
+            System.out.print("error");
+        }
+        //EmployeeManagement someRandomBusiness = Generator.GenerateWorkers(30);
+        //someRandomBusiness.PrintAllEmployees();
+
+        //UIManager.Instance().DisplayMultiChoice("MenuShit", "do x",  "do y" );
+
+
+        /*
+        System.out.println(Statistics.getAverageSalaryByPos(someRandomBusiness));
+        System.out.println(Statistics.getOverallAverageSalary(someRandomBusiness));
+        System.out.println(Statistics.getLowestSalary(someRandomBusiness));
+        System.out.println(Statistics.getHighestSalary(someRandomBusiness));
+        System.out.println(Statistics.getSexAverages(someRandomBusiness));
+        System.out.println(Statistics.getSexByPosition(someRandomBusiness));
+         */
+
+        }
+
 }

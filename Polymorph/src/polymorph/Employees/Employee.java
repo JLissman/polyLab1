@@ -5,6 +5,8 @@
  */
 package polymorph.Employees;
 
+import polymorph.Generator;
+
 /**
  *
  * @author Jonathan & Salar
@@ -21,13 +23,21 @@ public class Employee {
         this.Salary = Salary;
 
     }
+    public Employee(String Name, int Age, String Sex){
+        this.Name = Name;
+        this.Age = Age;
+        this.Sex = Sex;
+
+        //basically an intern
+        this.Salary = Generator.NextMinMax(0, 1000);
+    }
     
     public void getBonus(){
-        System.out.println("Everybody got a bonus");
+        System.out.println("No bonus");
     }
    
     public String getPosition(){
-        return "Everyody got a position";
+        return "No position";
     }
     public int getID(){
         return this.ID;
@@ -70,10 +80,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + ", Position =" + '}';
+        return "Employee[" + "Name=" + Name + ", Sex=" + Sex + ", Age=" + Age + ", Pay=" + Salary + ", Position =" + ']';
     }
-    
 
-    
-    
 }

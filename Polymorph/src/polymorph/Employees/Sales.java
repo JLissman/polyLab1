@@ -5,6 +5,8 @@
  */
 package polymorph.Employees;
 
+import polymorph.Generator;
+
 /**
  *
  * @author Jonathan & Salar
@@ -14,6 +16,10 @@ public class Sales extends Employee {
     public Sales(String Name, int Age, String Sex, int Pay) {
         super(Name, Age, Sex, Pay);
 
+    }
+    public Sales(String Name, int Age, String Sex)
+    {
+        super(Name, Age, Sex, Generator.NextMinMax(20000, 40000));
     }
 
 

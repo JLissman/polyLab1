@@ -5,6 +5,8 @@
  */
 package polymorph.Employees;
 
+import polymorph.Generator;
+
 /**
  *
  * @author Jonathan & Salar
@@ -15,7 +17,11 @@ public class Secretary extends Employee{
         super(Name, Age, Sex, Pay);
     }
 
-    
+    public Secretary(String Name, int Age, String Sex)
+    {
+        super(Name, Age, Sex, Generator.NextMinMax(20000, 30000));
+    }
+
     public int getBonus(int hoursWorked){
         int payout = 100 * hoursWorked;        
         return payout;
