@@ -27,7 +27,7 @@ public class MenuManager
 
         return choice;
     }
-    public static void PrintMultiInformation(String title, String... line)
+    public static void PrintInformation(String title, String... line)
     {
         DisplayManager.Instance().MultiInfoLine(title, line);
         InputManager.GetString();
@@ -89,23 +89,23 @@ public class MenuManager
             {
 
                 case 1:
-                    PrintMultiInformation(title, Statistics.getLowestSalary(business));
+                    PrintInformation(title, Statistics.getLowestSalary(business));
                     break;
 
                 case 2:
-                    PrintMultiInformation(title, Statistics.getOverallAverageSalary(business));
+                    PrintInformation(title, Statistics.getOverallAverageSalary(business));
                     break;
 
                 case 3:
-                    PrintMultiInformation(title, Statistics.getAverageSalaryByPos(business));
+                    PrintInformation(title, Statistics.getAverageSalaryByPos(business));
                     break;
 
                 case 4:
-                    PrintMultiInformation(title, Statistics.getOverallAveragesSex(business));
+                    PrintInformation(title, Statistics.getOverallAveragesSex(business));
                     break;
 
                 case 5:
-                    PrintMultiInformation(title, Statistics.getAverageSexByPos(business));
+                    PrintInformation(title, Statistics.getAverageSexByPos(business));
                     break;
             }
         }while (choice != 0);
@@ -132,7 +132,7 @@ public class MenuManager
                     for(int i = 0; i < temp.length; i++){
                         temp[i] = business.GetAllEmployees().get(i).toString();
                     }
-                    PrintMultiInformation("Employee OverView", temp);
+                    PrintInformation("Employee OverView", temp);
                     break;
                 case 2:
                     AddEmployee(business);
@@ -144,7 +144,7 @@ public class MenuManager
                     UpdateEmployeeName(business);
                     break;
                 case 5:
-
+                    GetUniqueEmployeeInfo(business);
                     break;
             }
         }while(choice != 0);
@@ -200,5 +200,16 @@ public class MenuManager
         String name = InputManager.GetString();
         business.UpdateEmployeeName(ID, name);
     }
-    
+    private void GetUniqueEmployeeInfo(EmployeeManager business)
+    {
+        DisplayManager.Instance().DisplayLines("Enter ID of employee");
+        DisplayManager.Instance().InputChoice("ID");
+        int ID = InputManager.GetInt();
+
+        Employee emp = business.GetEmployee(ID);
+        if(emp == null)
+            return;
+        PrintInformation(emp.getName() + " - Info", emp.toString());
+
+    }
 }
