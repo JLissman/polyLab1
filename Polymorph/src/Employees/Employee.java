@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Polymorph.src.Program.Employees;
+package Polymorph.src.Employees;
 
 
 import Polymorph.src.Tools.Generator;
@@ -15,26 +15,37 @@ import Polymorph.src.Tools.Generator;
 public class Employee {
     int ID;
     String Name, Sex;
-    int Age, Salary;
+    int Age, Cases;
+    double Salary;
     
-    public Employee(String Name, int Age, String Sex, int Salary){
+    public Employee(String Name, int Age, String Sex, int Salary)
+    {
         this.Name = Name;
         this.Age = Age;
         this.Sex = Sex;
         this.Salary = Salary;
-
+        this.Cases = Generator.NextMinMax(1, 10);
     }
-    public Employee(String Name, int Age, String Sex){
+    public Employee(String Name, int Age, String Sex)
+    {
         this.Name = Name;
         this.Age = Age;
         this.Sex = Sex;
-
         //basically an intern
         this.Salary = Generator.NextMinMax(0, 1000);
+        this.Cases = Generator.NextMinMax(1, 10);
+    }
+    public Employee()
+    {
+        this.Name = "Unnamed worker";
+        this.Age = 0;
+        this.Sex = "NONE";
+        this.Salary = 0;
+        this.Cases = 0;
     }
     
-    public void getBonus(){
-        System.out.println("No bonus");
+    public double getBonus(){
+        return 0;
     }
    
     public String getPosition()
@@ -49,7 +60,7 @@ public class Employee {
         return Name;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return Salary;
     }
     
@@ -84,11 +95,12 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee[" +
-                  "Name=" + Name +
-                ", Sex=" + Sex +
-                ", Age=" + Age +
-                ", Pay=" + Salary +
-                ", Position =" + ']';
+                "ID = " + ID+
+                ", Name = " + Name +
+                ", Sex = " + Sex +
+                ", Age = " + Age +
+                ", Pay = " + Salary +
+                ", Position = "+ getPosition()+ ']';
     }
 
 }

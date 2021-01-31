@@ -1,4 +1,4 @@
-package Polymorph.src.Program.Employees;
+package Polymorph.src.Employees;
 
 //List of possible branches in company
 public enum JobBranch

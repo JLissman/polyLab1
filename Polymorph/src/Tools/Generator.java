@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import Polymorph.src.Program.Employees.*;
-import Polymorph.src.Program.EmployeeManagement;
+import Polymorph.src.Employees.*;
+import Polymorph.src.Managers.EmployeeManager;
 
 /**
  *
@@ -80,10 +80,10 @@ public class Generator {
         }
     }
 
-    public static EmployeeManagement GenerateWorkers(int count)
+    public static EmployeeManager GenerateWorkers(int count)
     {
-        EmployeeManagement business = new EmployeeManagement();
-        for (int i = 0; i < count; i++)
+        EmployeeManager business = new EmployeeManager();
+        while(business.GetAllEmployees().size() < count)
         {
             //Generate names for each employee and put it inside an array of strings
             //where the first index is the first name and second index is the surname
@@ -96,26 +96,25 @@ public class Generator {
             String name = fname+" "+lname;
             JobBranch position = GenJobBranch();
             int salary = GenerateRandomSalary(position);
-            
+
             switch(position)
             {
                 case HR:
-                business.AddEmployee(new HR(name, age, sex, salary));
-                break;
+                    business.AddEmployee(new HR(name, age, sex, salary));
+                    break;
 
                 case Sales:
-                business.AddEmployee(new Sales(name, age, sex, salary));
-                break;
+                    business.AddEmployee(new Sales(name, age, sex, salary));
+                    break;
 
                 case Secretary:
-                business.AddEmployee(new Secretary(name, age, sex, salary));
-                break;
+                    business.AddEmployee(new Secretary(name, age, sex, salary));
+                    break;
 
                 case Technician:
-                business.AddEmployee(new Technician(name, age, sex, salary));
-                break;
-              }
-
+                    business.AddEmployee(new Technician(name, age, sex, salary));
+                    break;
+            }
         }
         return business;
     }
@@ -125,5 +124,5 @@ public class Generator {
     {
         return m_random.nextInt((max + 1) - min) + min;
     }
-    
+
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Polymorph.src.Program.Employees;
+package Polymorph.src.Employees;
 
 import Polymorph.src.Tools.Generator;
 
@@ -11,29 +11,24 @@ import Polymorph.src.Tools.Generator;
  *
  * @author Jonathan & Salar
  */
-public class HR extends Employee
-{
-    
-    public HR(String Name, int Age, String Sex, int Pay)
-    {
+public class Technician extends Employee {
+
+    public Technician(String Name, int Age, String Sex, int Pay) {
         super(Name, Age, Sex, Pay);
     }
 
-    public HR(String Name, int Age, String Sex)
+    public Technician(String Name, int Age, String Sex)
     {
         super(Name, Age, Sex, Generator.NextMinMax(20000, 35000));
     }
-    
-    
-    public int getBonus(int cases){
-        int payout = 1000 * cases;
-        return payout;
-        
-    
+
+    @Override
+    public double getBonus()
+    {
+        return getSalary()/100 * Cases;
     }
-    
-    public String getPosition(){
-    return "HR";
+    public String getPosition()
+    {
+        return "Technician";
     }
-    
 }

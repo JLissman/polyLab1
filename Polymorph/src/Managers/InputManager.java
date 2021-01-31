@@ -15,13 +15,18 @@ public class InputManager
     //Vår egna get metod för att mata in en int/double/String
     public static int GetInt()
     {
-        int temp = Integer.parseInt(GetString());
-        return temp;
+        String val = GetString();
+        if(val.equals("") || val.equals("\n"))
+            return -1;
+
+        return Integer.parseInt(val);
     }
     public static double  GetDouble()
     {
-        double temp = Double.parseDouble(GetString());
-        return temp;
+        String val = GetString();
+        if(val.equals("") || val.equals("\n"))
+            return -1;
+        return Double.parseDouble(val);
     }
     public static String GetString()
     {
@@ -36,15 +41,13 @@ public class InputManager
 
         // Om värdet i temp inte matchar en enda constraint ses det som en fail och returnerar -1
         if(Arrays.stream(constraint).noneMatch(i -> temp == i))
-        {
             return -1;
-        }
-
         return temp;
     }
     public static int GetBetween(int start, int end)
     {
         int temp = GetInt();
+
         if(temp < start || temp > end)
             return -1;
 
@@ -56,18 +59,15 @@ public class InputManager
 
         // Om värdet i temp inte matchar en enda constraint ses det som en fail och returnerar -1
         if(Arrays.stream(constraint).noneMatch(i -> temp == i))
-        {
             return -1;
-        }
-
         return temp;
     }
     public static double GetBetween(double start, double end)
     {
         double temp = GetDouble();
+
         if(temp < start || temp > end)
             return -1;
-
         return temp;
     }
     public static String GetString(boolean isCaseSensitive, String... constraint)
@@ -75,21 +75,20 @@ public class InputManager
         if(!isCaseSensitive)
         {
             String lowerCaseInput = GetString();
+
             for (int i = 0; i < constraint.length; i++)
-            {
                 constraint[i] = constraint[i].toLowerCase();
-            }
+
             if(Arrays.stream(constraint).noneMatch(i -> lowerCaseInput.equals(i)))
                 return null;
-
             return lowerCaseInput;
         }
         else
         {
             String normalCase = GetString();
-            if(Arrays.stream(constraint).noneMatch(i -> normalCase.equals(i)))
-                return null;
 
+            if(Arrays.stream(constraint).anyMatch(i -> normalCase.equals(i)))
+                return null;
             return normalCase;
         }
 

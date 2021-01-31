@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Polymorph.src.Program.Employees;
+package Polymorph.src.Employees;
 
 import Polymorph.src.Tools.Generator;
 
@@ -24,11 +24,10 @@ public class Sales extends Employee {
     }
 
 
-    
-    public int getBonus(int nrSales){
-    int payout = 1000*nrSales;
-    return payout;
-    
+    @Override
+    public double getBonus()
+    {
+        return 1000 * Cases;
     }
     
     @Override
