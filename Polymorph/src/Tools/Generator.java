@@ -119,6 +119,8 @@ public class Generator {
         return business;
     }
 
+
+    //Ignore, min personliga funktion RÖR DEN INTE DITT ÄCKLIGA TROLL. -Salar
     //Generate a number between (inclusive) MIN - (inclusive) MAX
     public static int NextMinMax(int min, int max)
     {
